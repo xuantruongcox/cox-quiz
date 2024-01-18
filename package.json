@@ -2,9 +2,9 @@
   "name": "@coxdev/cox-quiz",
   "repository": "https://github.com/xuantruongcox/cox-quiz.git",
   "private": false,
-  "version": "0.2.1",
+  "version": "0.2.4",
   "type": "module",
-  "main": "dist/cox-quiz.js",
+  "main": "app/cox-quiz.js",
   "module": "src",
   "types": "src/cox-quiz.d.ts",
   "files": [
@@ -12,7 +12,7 @@
     "types"
   ],
   "exports": {
-    ".": "./dist/cox-quiz.js"
+    ".": "./app/cox-quiz.js"
   },
   "scripts": {
     "dev": "vite",

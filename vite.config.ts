@@ -7,9 +7,9 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
         output: {
-            entryFileNames: "[name].js",
-            chunkFileNames: "[name].js",
-            assetFileNames: "[name].[ext]"
+            entryFileNames: "cox-quiz.js",
+            chunkFileNames: "cox-quiz.js",
+            assetFileNames: "cox-quiz.[ext]"
         }
     }
   }  

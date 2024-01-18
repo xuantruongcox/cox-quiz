@@ -87,4 +87,4 @@
       flex: 1 0 100px;
     }
   `;V([at({type:zt})],O.prototype,"question",2);V([at({type:String})],O.prototype,"correctAnswer",2);O=V([Ot("cox-quiz")],O);
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=cox-quiz.js.map
