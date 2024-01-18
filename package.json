@@ -1,7 +1,8 @@
 {
   "name": "@coxdev/cox-quiz",
+  "repository": "https://github.com/xuantruongcox/cox-quiz.git",
   "private": false,
-  "version": "0.1.8",
+  "version": "0.1.9",
   "type": "module",
   "main": "dist/cox-quiz.js",
   "module": "src",
@@ -16,6 +17,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
+    "watch": "vite build --watch --mode development",
     "preview": "vite preview"
   },
   "dependencies": {

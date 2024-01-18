@@ -1,13 +1,15 @@
 import {defineConfig} from 'vite';
 
 export default defineConfig({
-    build: {
-        lib: {
-            entry: 'src/cox-quiz.ts',
-            formats: ['es']
-        },
-        rollupOptions:{
-            external: [/^lit/]
+  build: {
+    sourcemap: true,
+    emptyOutDir: true,
+    rollupOptions: {
+        output: {
+            entryFileNames: "[name].js",
+            chunkFileNames: "[name].js",
+            assetFileNames: "[name].[ext]"
         }
     }
+  }  
 })
