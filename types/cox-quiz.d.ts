@@ -25,5 +25,4 @@ declare global {
         "cox-quiz": CoxQuiz;
     }
 }
-export declare const CoxQuizReact: import("@lit/react").ReactWebComponent<CoxQuiz, {}>;
 //# sourceMappingURL=cox-quiz.d.ts.map

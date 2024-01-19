@@ -1,8 +1,6 @@
 import { LitElement, css, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { when } from "lit/directives/when.js";
-import * as React from "react";
-import {createComponent} from '@lit/react'
 class QuizForm {
   name: String;
   answers: Array<String>;
@@ -147,9 +145,3 @@ declare global {
     "cox-quiz": CoxQuiz;
   }
 }
-
-export const CoxQuizReact = createComponent({
-  tagName: 'cox-quiz',
-  elementClass: CoxQuiz,
-  react: React,
-})
