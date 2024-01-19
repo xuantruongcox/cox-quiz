@@ -1,22 +1,14 @@
-import { css as u, LitElement as d, html as n } from "lit";
-import { property as h, customElement as p } from "lit/decorators.js";
+import { css as d, LitElement as u, html as n } from "lit";
+import { property as c, customElement as p } from "lit/decorators.js";
 import { when as m } from "lit/directives/when.js";
-var f = Object.defineProperty, x = Object.getOwnPropertyDescriptor, c = (e, t, i, l) => {
-  for (var s = l > 1 ? void 0 : l ? x(t, i) : t, o = e.length - 1, a; o >= 0; o--)
-    (a = e[o]) && (s = (l ? a(t, i, s) : a(s)) || s);
-  return l && s && f(t, i, s), s;
+var x = Object.defineProperty, y = Object.getOwnPropertyDescriptor, h = (e, t, a, r) => {
+  for (var l, s = r > 1 ? void 0 : r ? y(t, a) : t, o = e.length - 1; o >= 0; o--)
+    (l = e[o]) && (s = (r ? l(t, a, s) : l(s)) || s);
+  return r && s && x(t, a, s), s;
 };
-class v {
-  constructor(t, i) {
-    this.name = t, this.answers = i;
-  }
-}
-let r = class extends d {
+let i = class extends u {
   constructor() {
-    super(...arguments), this.question = {
-      name: "What color is the dog ???",
-      answers: ["blue", "black", "red", "yellow"]
-    }, this.correctAnswer = "black", this.isPassed = !1, this.isSelected = !1, this.message = "";
+    super(...arguments), this.question = { name: "What color is the dog ???", answers: ["blue", "black", "red", "yellow"] }, this.correctAnswer = "black", this.isPassed = !1, this.isSelected = !1, this.message = "";
   }
   render() {
     if (typeof this.question == "string") {
@@ -24,9 +16,7 @@ let r = class extends d {
       this.question = e;
     }
     return n`
-      ${m(
-      this.isPassed,
-      () => n`
+      ${m(this.isPassed, () => n`
           <div
             style="display: flex; flex-direction: column; align-items:center"
           >
@@ -35,8 +25,7 @@ let r = class extends d {
               Reset
             </button>
           </div>
-        `,
-      () => n`
+        `, () => n`
             <div class="quiz-container">
               <h3>${this.question.name}</h3>
               <ul class="answer__list">
@@ -52,9 +41,7 @@ let r = class extends d {
                           value="${e}"
                         />
                         <label for="${e}"
-                          >${this.numberToAlphabet(
-        t + 1
-      )}.${e}</label
+                          >${this.numberToAlphabet(t + 1)}.${e}</label
                         >
                       </div>
                     </li>
@@ -65,8 +52,7 @@ let r = class extends d {
                 Reset
               </button>
             </div>
-          `
-    )}
+          `)}
     `;
   }
   numberToAlphabet(e) {
@@ -81,7 +67,7 @@ let r = class extends d {
     this.isPassed = !1, this.isSelected = !1, this.message = "", this.requestUpdate();
   }
 };
-r.styles = u`
+i.styles = d`
     h3 {
       text-align: center;
     }
@@ -101,17 +87,12 @@ r.styles = u`
     .answer__list-item {
       flex: 1 0 100px;
     }
-  `;
-c([
-  h({ type: v })
-], r.prototype, "question", 2);
-c([
-  h({ type: String })
-], r.prototype, "correctAnswer", 2);
-r = c([
-  p("cox-quiz")
-], r);
+  `, h([c({ type: class {
+  constructor(e, t) {
+    this.name = e, this.answers = t;
+  }
+} })], i.prototype, "question", 2), h([c({ type: String })], i.prototype, "correctAnswer", 2), i = h([p("cox-quiz")], i);
 export {
-  r as CoxQuiz
+  i as CoxQuiz
 };
 //# sourceMappingURL=cox-quiz.js.map

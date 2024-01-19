@@ -20,6 +20,7 @@ The configuration component can contain the following reactive properties:
 
 ### Vanilla Js
 index.html
+
 ```html
 <body>
   ...
