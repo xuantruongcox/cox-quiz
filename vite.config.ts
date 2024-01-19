@@ -9,9 +9,8 @@ export default defineConfig({
     },
     outDir: "./build",
     sourcemap: true,
-    emptyOutDir: true,
+    // emptyOutDir: true,
     rollupOptions: {
-      plugins: [resolve()],
       output: {
         entryFileNames: "cox-quiz.js",
         chunkFileNames: "cox-quiz.js",

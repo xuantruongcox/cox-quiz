@@ -2,7 +2,7 @@
   "name": "@coxdev/cox-quiz",
   "repository": "https://github.com/xuantruongcox/cox-quiz.git",
   "private": false,
-  "version": "0.2.6",
+  "version": "0.2.7",
   "type": "module",
   "main": "build/cox-quiz.js",
   "module": "build/cox-quiz.js.map",
@@ -11,11 +11,7 @@
     "build"
   ],
   "exports": {
-    ".": {
-      "import": "./build/cox-quiz.js",
-      "require": "./build/cox-quiz.js"
-    },
-    "./types": "./types/cox-quiz.d.ts"
+   "default": "./build/cox-quiz.js"
   },
   "scripts": {
     "dev": "vite",
