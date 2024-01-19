@@ -8,7 +8,8 @@
   "module": "build/cox-quiz.js.map",
   "types": "types/cox-quiz.d.ts",
   "files": [
-    "build"
+    "build",
+    "types"
   ],
   "exports": {
     "default": "./build/cox-quiz.js"

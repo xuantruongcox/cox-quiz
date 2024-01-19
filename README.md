@@ -12,7 +12,10 @@ The configuration component can contain the following reactive properties:
     - `answers`: An array of string
 - `correctAnswer`: An String
 
-
+**Example:**
+```html
+<cox-quiz question='{"name": "How old are you ??", "answers": ["15", "18", "24", "25"]}' correctAnswer="24"></cox-quiz>
+```
 ## Usage
 
 ### Vanilla Js

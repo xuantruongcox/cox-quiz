@@ -11,11 +11,11 @@ export default defineConfig({
     sourcemap: true,
     // emptyOutDir: true,
     rollupOptions: {
-      output: {
-        entryFileNames: "cox-quiz.js",
-        chunkFileNames: "cox-quiz.js",
-        assetFileNames: "cox-quiz.[ext]",
-      },
+    //   output: {
+    //     entryFileNames: "cox-quiz.es.js",
+    //     chunkFileNames: "cox-quiz.es.js",
+    //     assetFileNames: "cox-quiz.[ext]",
+    //   },
       external: [/^lit/],
     },
   },
