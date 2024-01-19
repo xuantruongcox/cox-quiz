@@ -4,15 +4,18 @@
   "private": false,
   "version": "0.2.4",
   "type": "module",
-  "main": "app/cox-quiz.js",
-  "module": "src",
-  "types": "src/cox-quiz.d.ts",
+  "main": "build/cox-quiz.js",
+  "module": "build/cox-quiz.js.map",
+  "types": "types/cox-quiz.d.ts",
   "files": [
-    "dist",
-    "types"
+    "build"
   ],
   "exports": {
-    ".": "./app/cox-quiz.js"
+    ".": {
+      "import": "./build/cox-quiz.js",
+      "require": "./build/cox-quiz.js"
+    },
+    "./types": "./types/cox-quiz.d.ts"
   },
   "scripts": {
     "dev": "vite",
@@ -24,6 +27,9 @@
     "lit": "^3.1.0"
   },
   "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@web/rollup-plugin-html": "^2.1.2",
+    "terser": "^5.27.0",
     "typescript": "^5.2.2",
     "vite": "^5.0.8"
   }

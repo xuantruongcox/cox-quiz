@@ -1,16 +1,32 @@
-import {defineConfig} from 'vite';
+import resolve from "@rollup/plugin-node-resolve";
+import { defineConfig } from "vite";
 
 export default defineConfig({
   build: {
-    outDir: "./app/",
+    lib: {
+      entry: "src/cox-quiz.ts",
+      formats: ["es"],
+    },
+    outDir: "./build",
     sourcemap: true,
     emptyOutDir: true,
+    minify: "terser",
+    terserOptions: {
+      ie8: true,
+      ecma: 2020,
+      module: true,
+      format: {
+        ecma: 2020,
+      },
+    },
     rollupOptions: {
-        output: {
-            entryFileNames: "cox-quiz.js",
-            chunkFileNames: "cox-quiz.js",
-            assetFileNames: "cox-quiz.[ext]"
-        }
-    }
-  }  
-})
+      plugins: [resolve()],
+      output: {
+        entryFileNames: "cox-quiz.js",
+        chunkFileNames: "cox-quiz.js",
+        assetFileNames: "cox-quiz.[ext]",
+      },
+      external: [/^lit/],
+    },
+  },
+});
