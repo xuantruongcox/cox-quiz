@@ -1,44 +1,32 @@
-import { css, LitElement, html } from "lit";
-import { property, customElement } from "lit/decorators.js";
-import { when } from "lit/directives/when.js";
-var __defProp = Object.defineProperty;
-var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
-var __decorateClass = (decorators, target, key, kind) => {
-  var result = kind > 1 ? void 0 : kind ? __getOwnPropDesc(target, key) : target;
-  for (var i = decorators.length - 1, decorator; i >= 0; i--)
-    if (decorator = decorators[i])
-      result = (kind ? decorator(target, key, result) : decorator(result)) || result;
-  if (kind && result)
-    __defProp(target, key, result);
-  return result;
+import { css as u, LitElement as d, html as n } from "lit";
+import { property as h, customElement as p } from "lit/decorators.js";
+import { when as m } from "lit/directives/when.js";
+var f = Object.defineProperty, x = Object.getOwnPropertyDescriptor, c = (e, t, i, l) => {
+  for (var s = l > 1 ? void 0 : l ? x(t, i) : t, o = e.length - 1, a; o >= 0; o--)
+    (a = e[o]) && (s = (l ? a(t, i, s) : a(s)) || s);
+  return l && s && f(t, i, s), s;
 };
-class QuizForm {
-  constructor(_name, _answers) {
-    this.name = _name;
-    this.answers = _answers;
+class v {
+  constructor(t, i) {
+    this.name = t, this.answers = i;
   }
 }
-let CoxQuiz = class extends LitElement {
+let r = class extends d {
   constructor() {
-    super(...arguments);
-    this.question = {
+    super(...arguments), this.question = {
       name: "What color is the dog ???",
       answers: ["blue", "black", "red", "yellow"]
-    };
-    this.correctAnswer = "black";
-    this.isPassed = false;
-    this.isSelected = false;
-    this.message = "";
+    }, this.correctAnswer = "black", this.isPassed = !1, this.isSelected = !1, this.message = "";
   }
   render() {
-    if (typeof this.question === "string") {
-      const convert = JSON.parse(this.question);
-      this.question = convert;
+    if (typeof this.question == "string") {
+      const e = JSON.parse(this.question);
+      this.question = e;
     }
-    return html`
-      ${when(
+    return n`
+      ${m(
       this.isPassed,
-      () => html`
+      () => n`
           <div
             style="display: flex; flex-direction: column; align-items:center"
           >
@@ -48,72 +36,52 @@ let CoxQuiz = class extends LitElement {
             </button>
           </div>
         `,
-      () => {
-        return html`
+      () => n`
             <div class="quiz-container">
               <h3>${this.question.name}</h3>
               <ul class="answer__list">
-                ${this.question.answers.map((answer, answerIndex) => {
-          return html`
+                ${this.question.answers.map((e, t) => n`
                     <li class="answer__list-item">
                       <div class="item__checkbox">
                         <input
                           ?disabled=${this.isSelected}
                           @input=${this.onSelected}
-                          id="${answer}"
+                          id="${e}"
                           name="${this.question}"
                           type="radio"
-                          value="${answer}"
+                          value="${e}"
                         />
-                        <label for="${answer}"
+                        <label for="${e}"
                           >${this.numberToAlphabet(
-            answerIndex + 1
-          )}.${answer}</label
+        t + 1
+      )}.${e}</label
                         >
                       </div>
                     </li>
-                  `;
-        })}
+                  `)}
               </ul>
               <h1>${this.message}</h1>
               <button ?hidden=${!this.isSelected} style="max-width: 50px" @click="${this.resetQuiz}">
                 Reset
               </button>
             </div>
-          `;
-      }
+          `
     )}
     `;
   }
-  numberToAlphabet(number) {
-    if (Number.isInteger(number) && number > 0) {
-      return String.fromCharCode(number + 64);
-    } else {
-      return "Invalid input. Please provide a positive integer.";
-    }
+  numberToAlphabet(e) {
+    return Number.isInteger(e) && e > 0 ? String.fromCharCode(e + 64) : "Invalid input. Please provide a positive integer.";
   }
   onSelected(e) {
     e.preventDefault();
-    const input = e.target;
-    const isCorrect = this.correctAnswer === input.value;
-    if (isCorrect) {
-      this.isPassed = !this.isPassed;
-      this.isSelected = !this.isSelected;
-      this.requestUpdate();
-    } else {
-      this.message = "Your answer is incorrect";
-      this.isSelected = !this.isSelected;
-      this.requestUpdate();
-    }
+    const t = e.target;
+    this.correctAnswer === t.value ? (this.isPassed = !this.isPassed, this.isSelected = !this.isSelected, this.requestUpdate()) : (this.message = "Your answer is incorrect", this.isSelected = !this.isSelected, this.requestUpdate());
   }
   resetQuiz() {
-    this.isPassed = false;
-    this.isSelected = false;
-    this.message = "";
-    this.requestUpdate();
+    this.isPassed = !1, this.isSelected = !1, this.message = "", this.requestUpdate();
   }
 };
-CoxQuiz.styles = css`
+r.styles = u`
     h3 {
       text-align: center;
     }
@@ -134,16 +102,16 @@ CoxQuiz.styles = css`
       flex: 1 0 100px;
     }
   `;
-__decorateClass([
-  property({ type: QuizForm })
-], CoxQuiz.prototype, "question", 2);
-__decorateClass([
-  property({ type: String })
-], CoxQuiz.prototype, "correctAnswer", 2);
-CoxQuiz = __decorateClass([
-  customElement("cox-quiz")
-], CoxQuiz);
+c([
+  h({ type: v })
+], r.prototype, "question", 2);
+c([
+  h({ type: String })
+], r.prototype, "correctAnswer", 2);
+r = c([
+  p("cox-quiz")
+], r);
 export {
-  CoxQuiz
+  r as CoxQuiz
 };
 //# sourceMappingURL=cox-quiz.js.map

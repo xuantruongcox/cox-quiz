@@ -10,15 +10,6 @@ export default defineConfig({
     outDir: "./build",
     sourcemap: true,
     emptyOutDir: true,
-    minify: "terser",
-    terserOptions: {
-      ie8: true,
-      ecma: 2020,
-      module: true,
-      format: {
-        ecma: 2020,
-      },
-    },
     rollupOptions: {
       plugins: [resolve()],
       output: {
