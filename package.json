@@ -2,7 +2,7 @@
   "name": "@coxdev/cox-quiz",
   "repository": "https://github.com/xuantruongcox/cox-quiz.git",
   "private": false,
-  "version": "0.2.8",
+  "version": "0.2.9",
   "type": "module",
   "main": "build/cox-quiz.js",
   "module": "build/cox-quiz.js.map",
