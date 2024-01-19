@@ -2,7 +2,7 @@
   "name": "@coxdev/cox-quiz",
   "repository": "https://github.com/xuantruongcox/cox-quiz.git",
   "private": false,
-  "version": "0.2.7",
+  "version": "0.2.8",
   "type": "module",
   "main": "build/cox-quiz.js",
   "module": "build/cox-quiz.js.map",
@@ -11,7 +11,7 @@
     "build"
   ],
   "exports": {
-   "default": "./build/cox-quiz.js"
+    "default": "./build/cox-quiz.js"
   },
   "scripts": {
     "dev": "vite",
@@ -20,7 +20,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "lit": "^3.1.0"
+    "@lit-labs/react": "^2.1.2",
+    "@lit/react": "^1.0.2",
+    "@types/react": "^18.2.48",
+    "lit": "^3.1.0",
+    "react": "^18.2.0"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^15.2.3",

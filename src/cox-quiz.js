@@ -7,6 +7,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { LitElement, css, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { when } from "lit/directives/when.js";
+import * as React from "react";
+import { createComponent } from '@lit/react';
 class QuizForm {
     constructor(_name, _answers) {
         this.name = _name;
@@ -141,3 +143,8 @@ CoxQuiz = __decorate([
     customElement("cox-quiz")
 ], CoxQuiz);
 export { CoxQuiz };
+export const CoxQuizReact = createComponent({
+    tagName: 'cox-quiz',
+    elementClass: CoxQuiz,
+    react: React,
+});

@@ -5,13 +5,18 @@
 ```bash
 npm i lit @coxdev/cox-quiz
 ```
+## Options
+The configuration component can contain the following reactive properties:
+- `question` (required): An object or a JSON string
+    - `name`: An string, The name for question
+    - `answers`: An array of string
+- `correctAnswer`: An String
+
 
 ## Usage
 
-**Vanilla Js**
-
+### Vanilla Js
 index.html
-
 ```html
 <body>
   ...
@@ -22,10 +27,8 @@ index.html
   </script>
 </body>
 ```
+Running
+```bash
+npm run dev
+```
 
-## Options
-The configuration component can contain the following reactive properties:
-- `question` (required): An object or a JSON string
-    - `name`: An string, The name for question
-    - `answers`: An array of string
-- `correctAnswer`: An String
