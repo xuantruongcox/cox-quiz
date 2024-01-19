@@ -4,10 +4,7 @@ import { when } from "lit/directives/when.js";
 class QuizForm {
   name: String;
   answers: Array<String>;
-  constructor(
-    _name: String,
-    _answers: Array<String>,
-  ) {
+  constructor(_name: String, _answers: Array<String>) {
     this.name = _name;
     this.answers = _answers;
   }
@@ -47,16 +44,16 @@ export class CoxQuiz extends LitElement {
     name: "What color is the dog ???",
     answers: ["blue", "black", "red", "yellow"],
   };
-  @property({type: String})
-  correctAnswer = 'black';
+  @property({ type: String })
+  correctAnswer = "black";
 
   private isPassed = false;
   private isSelected = false;
-  
+
   render() {
-    if(typeof this.question === "string"){
+    if (typeof this.question === "string") {
       const convert = JSON.parse(this.question);
-      this.question = convert
+      this.question = convert;
     }
     return html`
       ${when(
@@ -99,7 +96,11 @@ export class CoxQuiz extends LitElement {
                 })}
               </ul>
               <h1>${this.message}</h1>
-              <button ?hidden=${!this.isSelected} style="max-width: 50px" @click="${this.resetQuiz}">
+              <button
+                ?hidden=${!this.isSelected}
+                style="max-width: 50px"
+                @click="${this.resetQuiz}"
+              >
                 Reset
               </button>
             </div>
@@ -135,7 +136,7 @@ export class CoxQuiz extends LitElement {
   private resetQuiz() {
     this.isPassed = false;
     this.isSelected = false;
-    this.message = '';
+    this.message = "";
     this.requestUpdate();
   }
 }

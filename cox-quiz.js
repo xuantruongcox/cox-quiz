@@ -26,7 +26,7 @@ let CoxQuiz = class CoxQuiz extends LitElement {
             name: "What color is the dog ???",
             answers: ["blue", "black", "red", "yellow"],
         };
-        this.correctAnswer = 'black';
+        this.correctAnswer = "black";
         this.isPassed = false;
         this.isSelected = false;
         this.message = "";
@@ -72,7 +72,11 @@ let CoxQuiz = class CoxQuiz extends LitElement {
             })}
               </ul>
               <h1>${this.message}</h1>
-              <button ?hidden=${!this.isSelected} style="max-width: 50px" @click="${this.resetQuiz}">
+              <button
+                ?hidden=${!this.isSelected}
+                style="max-width: 50px"
+                @click="${this.resetQuiz}"
+              >
                 Reset
               </button>
             </div>
@@ -106,7 +110,7 @@ let CoxQuiz = class CoxQuiz extends LitElement {
     resetQuiz() {
         this.isPassed = false;
         this.isSelected = false;
-        this.message = '';
+        this.message = "";
         this.requestUpdate();
     }
 };

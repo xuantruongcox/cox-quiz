@@ -48,7 +48,11 @@ let i = class extends u {
                   `)}
               </ul>
               <h1>${this.message}</h1>
-              <button ?hidden=${!this.isSelected} style="max-width: 50px" @click="${this.resetQuiz}">
+              <button
+                ?hidden=${!this.isSelected}
+                style="max-width: 50px"
+                @click="${this.resetQuiz}"
+              >
                 Reset
               </button>
             </div>

@@ -1,7 +1,8 @@
 import resolve from "@rollup/plugin-node-resolve";
 import { terser } from "rollup-plugin-terser";
 import { defineConfig } from "vite";
-import summary from 'rollup-plugin-summary'
+import summary from "rollup-plugin-summary";
+import react from "@vitejs/plugin-react";
 export default defineConfig({
   build: {
     lib: {
@@ -26,8 +27,11 @@ export default defineConfig({
             },
           },
         }),
-        summary()
+        summary(),
       ],
     },
+  },
+  esbuild: {
+    jsxInject: `import React from 'react'`,
   },
 });
