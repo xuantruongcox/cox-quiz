@@ -4,16 +4,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Vite + Lit + TS</title>
-  <link rel="stylesheet" href="./src/index.css" />
-  <script type="module" src="./src/cox-quiz.ts"></script>
+  <title>Rollup + Lit + TS</title>
   <style>
 
   </style>
 </head>
 
 <body>
-  <cox-quiz question='{"name": "Test", "answers":["ok","test","none","undefined"] }' correctAnswer="ok" />
+  <cox-quiz question='{"name": "Test", "answers":["ok","test","none","undefined"] }' correctAnswer="ok" ></cox-quiz>
+  <cox-quiz question='{"name": "TASDASd", "answers":["ok","test","none","undefined"] }' correctAnswer="ok" ></cox-quiz>
+  <script type="module" src="./build/cox-quiz.min.js"></script>
 </body>
 
 </html>

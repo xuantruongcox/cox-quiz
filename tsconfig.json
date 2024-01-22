@@ -8,8 +8,10 @@
     "lib": ["ES2021", "DOM", "DOM.Iterable"],
     "declaration": true,
     "declarationMap": true,
+    "sourceMap": true,
     "declarationDir": "types",
     "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "useDefineForClassFields": false,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true
@@ -20,7 +22,7 @@
       "strict": true
     }
   ],
-  "types": ["mocha"],
+  "types": ["node"],
   "include": ["src"],
   "exclude": ["node_modules","build"]
 }
